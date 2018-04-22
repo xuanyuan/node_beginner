@@ -25,11 +25,7 @@ function start(route, handle) {
 
         // 这里未做任何处理，而是采用简洁的类似接口的形式进行转发
         // 将具体实现交给底层，保证模块间松耦合
-        route(handle, pathname);
-
-        response.writeHead(200, {"Content-Type": "text/plain"});
-        response.write("Hello world");
-        response.end();
+        route(handle, pathname, response);
     };
 
     // http.createServer
